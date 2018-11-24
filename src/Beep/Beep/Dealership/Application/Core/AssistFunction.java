@@ -1,0 +1,23 @@
+package Beep.Beep.Dealership.Application.Core;
+
+import java.net.*;
+
+public class AssistFunction {
+    public static Boolean IsEmptyOrNull(String str){
+        if(str == null || str.isEmpty())
+            return true;
+        return false;
+    }
+
+    public static Boolean IsInternetAvailable() {
+        try {
+            URL url = new URL("https://www.google.com/");
+            URLConnection connection = url.openConnection();
+            connection.connect();
+            return true;
+        }
+        catch(Exception ex) {
+            return false;
+        }
+    }
+}
