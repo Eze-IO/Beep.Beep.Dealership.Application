@@ -1,0 +1,32 @@
+.text-field {
+    -fx-prompt-text-fill: #bdc3c7;
+    -fx-text-fill: #1abc9c;
+    -fx-background-color: #34495e;
+    -fx-background-radius: 5;
+    -fx-padding: 0.333333em 0.583em 0.333333em 0.583em;
+    -fx-font-size: 16;
+}
+
+.text-field .context-menu {
+    -fx-highlight-text-fill: #ecf0f1;
+    -fx-highlight-fill: #1abc9c;
+    -fx-background-color: #34495e;
+    -fx-background-radius: 5;
+}
+.text-field .context-menu .label{
+    -fx-text-fill: #ecf0f1;
+}
+
+.text-field .context-menu .menu-item:focused {
+   -fx-background-color: #1abc9c;
+   -fx-background-radius: 5;
+}
+
+.text-input:focused {
+   -fx-highlight-fill: #2c3e50;
+    -fx-border-color: #9b59b6;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5;
+   -fx-highlight-text-fill: #3498db;
+   -fx-background-color: #34495e;
+}

@@ -15,17 +15,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="frame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Beep.Beep.Dealership.Application.UI.LoginController">
+<BorderPane fx:id="frame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" stylesheets="@Design/Scene.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Beep.Beep.Dealership.Application.UI.LoginController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar stylesheets="@Design/Menu.css" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem fx:id="exitItem" mnemonicParsing="false" text="Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
             <items>
+                  <MenuItem fx:id="logItem" disable="true" mnemonicParsing="false" text="Open event logs" />
               <MenuItem fx:id="aboutItem" mnemonicParsing="false" text="About" />
             </items>
           </Menu>
@@ -43,7 +44,7 @@
          <children>
             <BorderPane prefWidth="200.0">
                <center>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="200.0" text="LOGIN" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="200.0" stylesheets="@Design/Label.css" text="LOGIN" textAlignment="CENTER" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -53,20 +54,20 @@
                   <Insets bottom="25.0" top="50.0" />
                </VBox.margin>
                <top>
-                  <ImageView fitHeight="114.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                  <ImageView fitHeight="112.5" fitWidth="112.5" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="15.0" />
                      </BorderPane.margin>
                      <image>
-                        <Image url="/place-holder.jpg" />
+                        <Image url="@/images/logo_transparent.png" />
                      </image>
                   </ImageView>
                </top>
             </BorderPane>
             <AnchorPane prefHeight="45.0" prefWidth="350.0">
                <children>
-                  <TextField fx:id="usernameBox" prefHeight="27.0" prefWidth="350.0" promptText="username" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Button fx:id="uclearSearch" layoutX="323.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="X" textFill="#7f8c8d" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TextField fx:id="usernameBox" prefHeight="27.0" prefWidth="350.0" promptText="username" stylesheets="@Design/TextField.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Button fx:id="uclearSearch" layoutX="323.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@Design/ClearButton.css" text="X" textFill="#7f8c8d" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -78,8 +79,8 @@
             </AnchorPane>
             <AnchorPane prefHeight="43.0" prefWidth="350.0">
                <children>
-                  <PasswordField fx:id="passwordBox" prefHeight="27.0" prefWidth="350.0" promptText="password" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Button fx:id="pclearSearch" layoutX="323.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="X" textFill="#7f8c8d" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <PasswordField fx:id="passwordBox" prefHeight="27.0" prefWidth="350.0" promptText="password" stylesheets="@Design/TextField.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Button fx:id="pclearSearch" layoutX="323.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@Design/ClearButton.css" text="X" textFill="#7f8c8d" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -96,7 +97,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="submitButton" mnemonicParsing="false" prefWidth="100.0" text="SUBMIT" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button fx:id="submitButton" mnemonicParsing="false" prefWidth="100.0" stylesheets="@Design/Button.css" text="SUBMIT" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                      <BorderPane.margin>
                         <Insets top="15.0" />
@@ -109,7 +110,7 @@
                   <Insets top="15.0" />
                </VBox.margin>
                <center>
-                  <Label fx:id="statusMessage" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="200.0" text="---" textAlignment="CENTER">
+                  <Label fx:id="statusMessage" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="200.0" stylesheets="@Design/Label.css" text="---" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>

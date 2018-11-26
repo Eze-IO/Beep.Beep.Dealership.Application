@@ -22,13 +22,14 @@ public class Database {
         HttpURLConnection conn = null;
         try {
             if(!AssistFunction.IsInternetAvailable()){
+                Library.writeLog("No internet connection available!", LogType.WARN);
                 return null;
             }
             conn = (HttpURLConnection)new URL(_getListUrl).openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
             if(conn.getResponseCode() != 200) {
-                //error occurred
+                Library.writeLog("Failed to get all item!", LogType.WARN);
             } else {
                 StringBuilder result = new StringBuilder();
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -63,7 +64,7 @@ public class Database {
             return null;
         }
         catch(Exception ex) {
-            System.out.println(ex.getMessage());
+            Library.writeLog(ex);
             return null;
         }
         finally {
@@ -97,8 +98,8 @@ public class Database {
                     soldStatus = "sold";
                 String sPrice = ("$"+Double.toString(c.price));
                 StringBuilder sb = new StringBuilder
-                        (String.format("ID(%s) Name(%s) Make(%s) Model(%s) Color(%s) Year(%s) Price(%s) Price(%s) %s",
-                                c.getID(), c.name, c.make, c.model, c.color, c.year, sPrice, c.price, soldStatus));
+                        (String.format("ID(%s) Name(%s) Make(%s) Model(%s) Color(%s) Year(%s) Price(%s) Price(%s) %s, Status(%s)",
+                                c.getID(), c.name, c.make, c.model, c.color, c.year, sPrice, c.price, soldStatus, soldStatus));
                 sb = new StringBuilder(sb.toString().toLowerCase());
                 for(String s : search.split(" ")){
                     if(sb.indexOf(s)>-1)
@@ -112,6 +113,7 @@ public class Database {
             return result;
         }
         catch (Exception ex) {
+            Library.writeLog(ex);
             return null;
         }
     }
@@ -120,6 +122,7 @@ public class Database {
         HttpURLConnection conn = null;
         try{
             if(!AssistFunction.IsInternetAvailable()){
+                Library.writeLog("No internet connection available!", LogType.WARN);
                 return null;
             }
             conn = (HttpURLConnection)new URL(_getItemUrl).openConnection();
@@ -134,8 +137,7 @@ public class Database {
             os.flush();
 
             if(conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                System.out.println("Error!");
-                //error occurred
+                Library.writeLog("Failed to get item!", LogType.WARN);
             } else {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 StringBuilder result = new StringBuilder(br.readLine());
@@ -162,6 +164,7 @@ public class Database {
             return null;
         }
         catch (Exception ex) {
+            Library.writeLog(ex);
             return null;
         }
         finally {
@@ -174,6 +177,7 @@ public class Database {
         HttpURLConnection conn = null;
         try{
             if(!AssistFunction.IsInternetAvailable()){
+                Library.writeLog("No internet connection available!", LogType.WARN);
                 return false;
             }
             conn = (HttpURLConnection)new URL(_putItemUrl).openConnection();
@@ -194,7 +198,7 @@ public class Database {
             os.flush();
 
             if(conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                //error occurred
+                Library.writeLog("Failed to save item!", LogType.WARN);
             } else {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 return Boolean.parseBoolean(br.readLine().trim());
@@ -202,7 +206,7 @@ public class Database {
             return false;
         }
         catch (Exception ex) {
-            System.out.println(ex.toString());
+            Library.writeLog(ex);
             return false;
         }
         finally {
@@ -213,8 +217,7 @@ public class Database {
 
     public static Boolean updateAnItem(Car car){
         try{
-            int ID = car.getID();
-            Car c = getAnItem(ID);
+            Car c = getAnItem(car.getID());
             if(car.equals(c)){
                 Vehicle v = new Vehicle();
                 v.name = car.name;
@@ -225,11 +228,13 @@ public class Database {
                 v.price = car.price;
                 v.sold = car.sold;
                 if(saveAnItem(v))
-                    return removeAnItem(c.getID());
+                    return removeAnItem(car.getID());
             }
             return false;
         }
         catch(Exception ex){
+            Library.writeLog("Failed to update item!", LogType.WARN);
+            Library.writeLog(ex);
             return false;
         }
     }
@@ -238,6 +243,7 @@ public class Database {
         HttpURLConnection conn = null;
         try{
             if(!AssistFunction.IsInternetAvailable()){
+                Library.writeLog("No internet connection available!", LogType.WARN);
                 return false;
             }
             conn = (HttpURLConnection)new URL(_deleteItemUrl).openConnection();
@@ -252,7 +258,7 @@ public class Database {
             os.flush();
 
             if(conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                //error occurred
+                Library.writeLog("Falied to remove item!", LogType.WARN);
             } else {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 return Boolean.parseBoolean(br.readLine().trim());
@@ -260,7 +266,7 @@ public class Database {
             return false;
         }
         catch (Exception ex) {
-            System.out.println(ex.toString());
+            Library.writeLog(ex);
             return false;
         }
         finally {

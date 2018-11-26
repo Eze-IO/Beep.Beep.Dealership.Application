@@ -1,0 +1,13 @@
+.titled-pane * {
+    -fx-text-fill: #ecf0f1;
+    -fx-background-color: #1abc9c;
+    -fx-background-radius: 0 0 3 3;
+}
+
+.titled-pane .label{
+    -fx-text-fill: #263238;
+}
+
+* {
+   -fx-font-weight: bold;
+}

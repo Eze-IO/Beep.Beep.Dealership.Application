@@ -2,6 +2,7 @@ package Beep.Beep.Dealership.Application.UI;
 
 import Beep.Beep.Dealership.Application.Core.AssistFunction;
 import Beep.Beep.Dealership.Application.Core.Information;
+import Beep.Beep.Dealership.Application.Core.Library;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.application.*;
 import javafx.util.Callback;
 import javafx.scene.control.Alert.*;
+import java.io.*;
 
 public class LoginController {
     @FXML
@@ -38,54 +40,74 @@ public class LoginController {
     private Button uclearSearch;
     @FXML
     private Button pclearSearch;
+    @FXML
+    private Menu helpMenu;
+    @FXML
+    private MenuItem logItem;
 
     public void initialize() {
-        updateStatus(null);
-        exitItem.setOnAction(event -> {
-            Platform.exit();
-        });
+        try{
+            updateStatus(null);
+            exitItem.setOnAction(event -> {
+                Platform.exit();
+            });
 
-        aboutItem.setOnAction(event -> {
-            Alert alert = new Alert(AlertType.INFORMATION, "Hey!", ButtonType.OK);
-            alert.setTitle("About");
-            alert.setHeaderText(Information.getTitle());
-            alert.setContentText(Information.getCompanyInfo());
-            alert.showAndWait();
-        });
+            aboutItem.setOnAction(event -> {
+                Alert alert = new Alert(AlertType.INFORMATION, null, ButtonType.OK);
+                alert.setTitle("About");
+                alert.setHeaderText(Information.getTitle());
+                alert.setContentText(Information.getCompanyInfo());
+                DialogPane dialogPane = alert.getDialogPane();
+                dialogPane.getStylesheets().add("css/Dialog.css");
+                alert.showAndWait();
+            });
 
-        submitButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                switchToInventoryScreen();
-            }
-        });
+            submitButton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override public void handle(ActionEvent e) {
+                    switchToInventoryScreen();
+                }
+            });
 
-        //Clear search text field on 'X' click
-        uclearSearch.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                usernameBox.setText(null);
-            }
-        });
+            //Clear search text field on 'X' click
+            uclearSearch.setOnAction(new EventHandler<ActionEvent>() {
+                @Override public void handle(ActionEvent e) {
+                    usernameBox.setText(null);
+                }
+            });
 
-        //Clear search text field on 'X' click
-        pclearSearch.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                passwordBox.setText(null);
-            }
-        });
+            //Clear search text field on 'X' click
+            pclearSearch.setOnAction(new EventHandler<ActionEvent>() {
+                @Override public void handle(ActionEvent e) {
+                    passwordBox.setText(null);
+                }
+            });
 
-        usernameBox.textProperty().addListener((obs, oldText, newText) -> {
-            uclearSearch.setVisible(true);
-            if(AssistFunction.IsEmptyOrNull(usernameBox.getText())){
-                uclearSearch.setVisible(false);
-            }
-        });
+            usernameBox.textProperty().addListener((obs, oldText, newText) -> {
+                uclearSearch.setVisible(true);
+                if(AssistFunction.IsEmptyOrNull(usernameBox.getText())){
+                    uclearSearch.setVisible(false);
+                }
+            });
 
-        passwordBox.textProperty().addListener((obs, oldText, newText) -> {
-            pclearSearch.setVisible(true);
-            if(AssistFunction.IsEmptyOrNull(passwordBox.getText())||passwordBox.getText().length()<=0){
-                pclearSearch.setVisible(false);
-            }
-        });
+            passwordBox.textProperty().addListener((obs, oldText, newText) -> {
+                pclearSearch.setVisible(true);
+                if(AssistFunction.IsEmptyOrNull(passwordBox.getText())||passwordBox.getText().length()<=0){
+                    pclearSearch.setVisible(false);
+                }
+            });
+
+            helpMenu.setOnShowing(event -> {
+                logItem.setDisable(true);
+                if(Library.logFileExists())
+                    logItem.setDisable(false);
+            });
+
+            logItem.setOnAction(event -> {
+                AssistFunction.OpenFile(Library.getLogFile());
+            });
+        } catch (Exception ex){
+            Library.writeLog(ex);
+        }
     }
 
     //Switches to the inventory screen
@@ -96,6 +118,7 @@ public class LoginController {
             loader.setController(new InventoryController());
             screen.addScreen("inventory", (Pane)loader.load());
             screen.activate("inventory");
+            screen.centerWindow();
         }
         catch (Exception ex) {
             System.out.println(ex.toString());

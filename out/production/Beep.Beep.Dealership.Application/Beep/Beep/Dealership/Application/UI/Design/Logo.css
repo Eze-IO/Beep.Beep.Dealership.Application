@@ -1,0 +1,6 @@
+.image-view {
+    -fx-text-fill: #ecf0f1;
+    -fx-background-color: #1abc9c;
+    /*-fx-effect: dropshadow(three-pass-box, #16a085, 0, 1.0, 2.0, 2.0);*/
+    -fx-background-radius: 5;
+}

@@ -1,5 +1,7 @@
 package Beep.Beep.Dealership.Application.Core;
 
+import java.io.*;
+import java.awt.Desktop;
 import java.net.*;
 
 public class AssistFunction {
@@ -17,6 +19,16 @@ public class AssistFunction {
             return true;
         }
         catch(Exception ex) {
+            return false;
+        }
+    }
+
+    public static Boolean OpenFile(String pathToFile){
+        try {
+            Desktop d = Desktop.getDesktop();
+            d.open(new File(pathToFile));
+            return true;
+        } catch (Exception ex) {
             return false;
         }
     }

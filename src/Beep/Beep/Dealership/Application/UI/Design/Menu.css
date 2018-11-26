@@ -1,0 +1,36 @@
+.menu-bar {
+    -fx-text-fill: #263238;
+    -fx-background-color: #1abc9c;
+    -fx-background-radius: 0 0 3 3;
+    -fx-effect: dropshadow(three-pass-box, #263238, 0.5, 4, 0, 4);
+}
+.menu:showing {
+    -fx-background-color: #1abc9c;
+}
+
+.context-menu {
+    -fx-highlight-text-fill: #ecf0f1;
+    -fx-highlight-fill: transparent;
+    -fx-background-color: inherit;
+    -fx-background-radius: 0 0 3 3;
+    -fx-effect: dropshadow(three-pass-box, #263238, 0.5, 4, 1.5, 4);
+}
+
+.menu-item .label{
+    -fx-text-fill: #263238;
+}
+
+.menu-button{
+   -fx-background-color: inherit;
+}
+.menu-item:focused {
+   -fx-background-color: transparent;
+}
+
+.menu-item:hover * {
+   -fx-text-fill: #ecf0f1;
+}
+
+* {
+   -fx-font-weight: bold;
+}

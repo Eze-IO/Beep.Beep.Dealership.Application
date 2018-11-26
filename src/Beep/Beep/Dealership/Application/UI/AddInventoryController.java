@@ -3,6 +3,8 @@ package Beep.Beep.Dealership.Application.UI;
 import Beep.Beep.Dealership.Application.Core.AssistFunction;
 import Beep.Beep.Dealership.Application.Core.Database;
 import Beep.Beep.Dealership.Application.Core.Entities.Vehicle;
+import Beep.Beep.Dealership.Application.Core.Library;
+import Beep.Beep.Dealership.Application.Core.LogType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -31,45 +33,64 @@ public class AddInventoryController {
 
     public void initialize() {
 
-        //Clear on start
-        updateStatus(null);
+        try{
+            //Clear on start
+            updateStatus(null);
 
-        //Set submit button click event
-        submitButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                saveToInventory();
-            }
-        });
+            //Set submit button click event
+            submitButton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override public void handle(ActionEvent e) {
+                    saveToInventory();
+                }
+            });
+
+            makeBox.textProperty().addListener((obs, oldText, newText) -> {
+                toggleSubmitButton();
+            });
+
+            modelBox.textProperty().addListener((obs, oldText, newText) -> {
+                toggleSubmitButton();
+            });
+
+            colorBox.textProperty().addListener((obs, oldText, newText) -> {
+                toggleSubmitButton();
+            });
+
+            priceBox.textProperty().addListener((obs, oldText, newText) -> {
+                toggleSubmitButton();
+                try{
+                    if(!newText.matches("\\d*(\\.\\d*)?")) {
+                        priceBox.setText(newText.replaceAll("[^\\d]", ""));
+                    }
+                }
+                catch(Exception ex){
+                    Library.writeLog(ex);
+                }
+            });
+
+            yearBox.textProperty().addListener((obs, oldText, newText) -> {
+                toggleSubmitButton();
+                try{
+                    if(!newText.matches("\\d*(\\.\\d*)?")) {
+                        yearBox.setText(newText.replaceAll("[^\\d]", ""));
+                    }
+                }
+                catch(Exception ex){
+                    Library.writeLog(ex);
+                }
+            });
+
+            toggleSubmitButton();
+        }
+        catch(Exception ex){
+            Library.writeLog(ex);
+        }
+
     }
 
     private void saveToInventory(){
         try{
             Vehicle v = new Vehicle();
-            if(AssistFunction.IsEmptyOrNull(makeBox.getText()))
-            {
-                updateStatus("Make of car is required! Please enter a make!");
-                return;
-            }
-            if(AssistFunction.IsEmptyOrNull(modelBox.getText()))
-            {
-                updateStatus("Model of car is required! Please enter the model!");
-                return;
-            }
-            if(AssistFunction.IsEmptyOrNull(colorBox.getText()))
-            {
-                updateStatus("Color of car is required! Please enter the color!");
-                return;
-            }
-            if(AssistFunction.IsEmptyOrNull(yearBox.getText()))
-            {
-                updateStatus("Year of car is required! Please enter the year!");
-                return;
-            }
-            if(AssistFunction.IsEmptyOrNull(priceBox.getText()))
-            {
-                updateStatus("Price of car is required! Please enter the initial price!");
-                return;
-            }
             v.name = "unknown";
             v.make = makeBox.getText();
             v.model = modelBox.getText();
@@ -77,14 +98,23 @@ public class AddInventoryController {
             v.color = colorBox.getText();
             v.price = Double.parseDouble(priceBox.getText());
             v.sold = false;
-            if(Database.saveAnItem(v))
+            if(Database.saveAnItem(v)){
+                Library.writeLog("Added new car to the database");
                 updateStatus("Successfully saved new car!");
-            else
+            } else {
+                Library.writeLog("Failed to add a new car to the database");
                 updateStatus("Failed to save new car!");
+            }
         }
         catch(Exception ex) {
+            Library.writeLog(ex, LogType.ERROR);
             return;
         }
+    }
+
+    private void toggleSubmitButton(){
+        submitButton.setDisable((AssistFunction.IsEmptyOrNull(makeBox.getText())||AssistFunction.IsEmptyOrNull(modelBox.getText())||AssistFunction.IsEmptyOrNull(colorBox.getText())
+                ||AssistFunction.IsEmptyOrNull(yearBox.getText())||AssistFunction.IsEmptyOrNull(priceBox.getText())));
     }
 
     //Displays status or error message
