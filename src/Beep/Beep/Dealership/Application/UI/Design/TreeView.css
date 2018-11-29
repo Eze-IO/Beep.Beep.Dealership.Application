@@ -38,3 +38,39 @@
     -fx-border-style: solid;
     -fx-border-width: 5;
 }
+
+.tree-cell .label{
+   -fx-text-fill: #ecf0f1;
+}
+
+.tree-cell .text-field .context-menu .label{
+    -fx-text-fill: #ecf0f1;
+}
+
+.tree-cell .text-field .context-menu {
+    -fx-highlight-text-fill: #ecf0f1;
+    -fx-highlight-fill: #3498db;
+    -fx-background-color: #1abc9c;
+    -fx-background-radius: 5;
+}
+
+.tree-cell .text-field .context-menu .menu-item:focused {
+   -fx-background-color: #3498db;
+   -fx-background-radius: 5;
+}
+
+.tree-cell .text-field{
+   -fx-text-fill: #ecf0f1;
+   -fx-background-color : inherit;
+   -fx-padding: 0 0 10 0;
+}
+
+.tree-cell .text-input:focused {
+    -fx-text-fill: #3498db;
+    -fx-highlight-fill: #2c3e50;
+    -fx-border-color: none;
+    -fx-border-width: 0px;
+    -fx-border-radius: 5;
+    -fx-highlight-text-fill: #9b59b6;
+    -fx-background-color: inherit;
+}

@@ -15,12 +15,14 @@ import javafx.scene.Node;
 import javafx.event.ActionEvent;
 import javafx.scene.input.*;
 import javafx.scene.paint.*;
+import javafx.geometry.*;
 
 import java.util.regex.*;
 import javafx.event.*;
 
 public class InventoryController {
 
+    //List of ui components
     @FXML
     private BorderPane frame;
     @FXML
@@ -53,6 +55,7 @@ public class InventoryController {
     private Menu helpMenu;
     @FXML
     private MenuItem logItem;
+    /*-------------------------*/
 
     public void initialize() {
 
@@ -120,6 +123,7 @@ public class InventoryController {
                         image = warningIcon();
                         message = "Failed to remove item with ID: "+_lastSelection;
                         Library.writeLog(message, LogType.WARN);
+                        Screens.showMessage(message, Alert.AlertType.ERROR);
                     }
                     clearView();
                     selectionView.getChildren().add(new TreeView<String> (new TreeItem<String> (message, image)));
@@ -142,7 +146,7 @@ public class InventoryController {
                 alert.setHeaderText(Information.getTitle());
                 alert.setContentText(Information.getCompanyInfo());
                 DialogPane dialogPane = alert.getDialogPane();
-                dialogPane.getStylesheets().add("css/Dialog.css");
+                dialogPane.getStylesheets().add("css/Dialog.css"); //Add custom css
                 alert.showAndWait();
             });
 
@@ -289,18 +293,242 @@ public class InventoryController {
                 TreeItem<String> top = new TreeItem<String> (String.format("ID (%d)", c.getID()), carIcon());
                 rootItem.getChildren().add(top);
                 TreeItem<String> t = rootItem.getChildren().get(i);
-                t.getChildren().add(new TreeItem<String> ("Make: "+c.make, makeIcon()));
-                t.getChildren().add(new TreeItem<String> ("Model: "+c.model, modelIcon()));
-                t.getChildren().add(new TreeItem<String> (String.format("Year: %s", c.year), yearIcon()));
-                Label l = new Label();
-                l.setText(String.format("Color: %s", c.color));
-                l.setTextFill(Color.web("#ecf0f1"));
+                HBox hbox1 = new HBox(5);
+                Label mk = new Label();
+                Label mv = new Label();
+                mk.setText("Make:");
+                mv.setText(c.make);
+                TextField mt = new TextField(mv.getText());
+                hbox1.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+                            if(mouseEvent.getClickCount() == 2){
+                                if(!hbox1.getChildren().contains(mt)){
+                                    mt.setOnKeyPressed(new EventHandler<KeyEvent>()
+                                    {
+                                        @Override
+                                        public void handle(KeyEvent ke)
+                                        {
+                                            if(ke.getCode().equals(KeyCode.ENTER)){
+                                                int id = c.getID();
+                                                Car cu = Database.getAnItem(id);
+                                                if(cu != null){
+                                                    cu.make = mt.getText();
+                                                    if(Database.updateAnItem(cu)){
+                                                        mv.setText(mt.getText());
+                                                    }
+                                                } else {
+                                                    Library.writeLog(String.format("Encountered issue when updating ID(%s) item's make!", c.getID()), LogType.WARN);
+                                                    refreshView();
+                                                }
+                                                hbox1.getChildren().removeAll(mt);
+                                                hbox1.getChildren().addAll(mv);
+                                            }
+                                        }
+                                    });
+                                    mt.focusedProperty().addListener((ov, oldV, newV) -> {
+                                        if(!newV) {
+                                            try{
+                                                mt.setText(c.make);
+                                                hbox1.getChildren().removeAll(mt);
+                                                hbox1.getChildren().addAll(mv);
+                                            }
+                                            catch(Exception ex) { return; }
+                                        }
+                                    });
+                                    hbox1.getChildren().removeAll(mv);
+                                    hbox1.getChildren().addAll(mt);
+                                }
+                            }
+                        }
+                    }
+                });
+                hbox1.getChildren().addAll(makeIcon(), mk, mv);
+
+                HBox hbox2 = new HBox(5);
+                Label mok = new Label();
+                Label mov = new Label();
+                mok.setText("Model:");
+                mov.setText(c.model);
+                TextField mot = new TextField(mov.getText());
+                hbox2.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+                            if(mouseEvent.getClickCount() == 2){
+                                if(!hbox2.getChildren().contains(mot)){
+                                    mot.setOnKeyPressed(new EventHandler<KeyEvent>()
+                                    {
+                                        @Override
+                                        public void handle(KeyEvent ke)
+                                        {
+                                            if(ke.getCode().equals(KeyCode.ENTER)){
+                                                int id = c.getID();
+                                                Car cu = Database.getAnItem(id);
+                                                if(cu != null){
+                                                    cu.model = mot.getText();
+                                                    if(Database.updateAnItem(cu)){
+                                                        mov.setText(mot.getText());
+                                                    }
+                                                } else {
+                                                    Library.writeLog(String.format("Encountered issue when updating ID(%s) item's model!", c.getID()), LogType.WARN);
+                                                    refreshView();
+                                                }
+                                                hbox2.getChildren().removeAll(mok, mot);
+                                                hbox2.getChildren().addAll(mok, mov);
+                                            }
+                                        }
+                                    });
+                                    mot.focusedProperty().addListener((ov, oldV, newV) -> {
+                                        if(!newV) {
+                                            try{
+                                                mot.setText(c.model);
+                                                hbox2.getChildren().removeAll(mot);
+                                                hbox2.getChildren().addAll(mov);
+                                            }
+                                            catch(Exception ex) { return; }
+                                        }
+                                    });
+                                    hbox2.getChildren().removeAll(mok, mov);
+                                    hbox2.getChildren().addAll(mok, mot);
+                                }
+                            }
+                        }
+                    }
+                });
+                hbox2.getChildren().addAll(modelIcon(), mok, mov);
+
+                HBox hbox3 = new HBox(5);
+                Label yk = new Label();
+                Label yv = new Label();
+                yk.setText("Year:");
+                yv.setText(Integer.toString(c.year));
+                TextField yt = new TextField(yv.getText());
+                hbox3.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+                            if(mouseEvent.getClickCount() == 2){
+                                if(!hbox3.getChildren().contains(yt)){
+                                    yt.setOnKeyPressed(new EventHandler<KeyEvent>()
+                                    {
+                                        @Override
+                                        public void handle(KeyEvent ke)
+                                        {
+                                            if(ke.getCode().equals(KeyCode.ENTER)){
+                                                int id = c.getID();
+                                                Car cu = Database.getAnItem(id);
+                                                if(cu != null){
+                                                    String np = yt.getText().replaceAll("\\D+","");
+                                                    cu.year = Integer.parseInt(np);
+                                                    if(Database.updateAnItem(cu)){
+                                                        yv.setText(yt.getText());
+                                                    }
+                                                }else {
+                                                    Library.writeLog(String.format("Encountered issue when updating ID(%s) item's year!", c.getID()), LogType.WARN);
+                                                    refreshView();
+                                                }
+                                                hbox3.getChildren().removeAll(yk, yt);
+                                                hbox3.getChildren().addAll(yk, yv);
+                                            }
+                                        }
+                                    });
+                                    yt.focusedProperty().addListener((ov, oldV, newV) -> {
+                                        if(!newV) {
+                                            try{
+                                                yt.setText(Integer.toString(c.year));
+                                                hbox3.getChildren().removeAll(yt);
+                                                hbox3.getChildren().addAll(yv);
+                                            }
+                                            catch(Exception ex) { return; }
+                                        }
+                                    });
+                                    yt.textProperty().addListener((obs, oldText, newText) -> {
+                                        try{
+                                            if(!newText.matches("\\d*")) {
+                                                yt.setText(newText.replaceAll("[^\\d]", ""));
+                                            }
+                                        }
+                                        catch(Exception ex){
+                                            return;
+                                        }
+                                    });
+                                    hbox3.getChildren().removeAll(yk, yv);
+                                    hbox3.getChildren().addAll(yk, yt);
+                                }
+                            }
+                        }
+                    }
+                });
+                hbox3.getChildren().addAll(yearIcon(), yk, yv);
+
+                HBox hbox4 = new HBox(5);
+                Label ck = new Label();
+                Label cv = new Label();
+                ck.setText("Color:");
+                cv.setText(c.color);
+                cv.setTextFill(Color.web("#ecf0f1"));
                 try{
-                    l.setTextFill(Color.web(c.color));
-                }catch(Exception ex) {}
-                HBox hbox = new HBox(5);
-                hbox.getChildren().addAll(colorIcon(), l);
-                t.getChildren().add(new TreeItem<String> ("", hbox));
+                    cv.setStyle("-fx-text-fill: "+c.color);
+                }catch(Exception ex) { return; }
+                if(cv.isCache())
+                    cv.setCache(false);
+                TextField ct = new TextField(cv.getText());
+                hbox4.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+                            if(mouseEvent.getClickCount() == 2){
+                                if(!hbox4.getChildren().contains(ct)){
+                                    ct.setOnKeyPressed(new EventHandler<KeyEvent>()
+                                    {
+                                        @Override
+                                        public void handle(KeyEvent ke)
+                                        {
+                                            if(ke.getCode().equals(KeyCode.ENTER)){
+                                                int id = c.getID();
+                                                Car cu = Database.getAnItem(id);
+                                                if(cu != null){
+                                                    cu.color = ct.getText();
+                                                    if(Database.updateAnItem(cu)){
+                                                        cv.setText(ct.getText());
+                                                    }
+                                                } else {
+                                                    Library.writeLog(String.format("Encountered issue when updating ID(%s) item's color!", c.getID()), LogType.WARN);
+                                                    refreshView();
+                                                }
+                                                hbox4.getChildren().removeAll(ck, ct);
+                                                hbox4.getChildren().addAll(ck, cv);
+                                                try{
+                                                    cv.setStyle("-fx-text-fill: "+c.color);
+                                                }catch(Exception ex) { return; }
+                                            }
+                                        }
+                                    });
+                                    ct.focusedProperty().addListener((ov, oldV, newV) -> {
+                                        if(!newV) {
+                                            try{
+                                                ct.setText(c.color);
+                                                hbox4.getChildren().removeAll(ct);
+                                                hbox4.getChildren().addAll(cv);
+                                            }
+                                            catch(Exception ex) { return; }
+                                        }
+                                    });
+                                    hbox4.getChildren().removeAll(ck, cv);
+                                    hbox4.getChildren().addAll(ck, ct);
+                                }
+                            }
+                        }
+                    }
+                });
+                hbox4.getChildren().addAll(colorIcon(), ck, cv);
+
+                t.getChildren().add(new TreeItem<String> ("", hbox1));
+                t.getChildren().add(new TreeItem<String> ("", hbox2));
+                t.getChildren().add(new TreeItem<String> ("", hbox3));
+                t.getChildren().add(new TreeItem<String> ("", hbox4));
                 i++;
             }
             TreeView<String> tree = new TreeView<String> (rootItem);
@@ -310,7 +538,8 @@ public class InventoryController {
                     salesButton.setDisable(true);
                     deleteButton.setDisable(true);
                     TreeItem<String> selectedItem = (TreeItem<String>) newValue;
-                    System.out.println("User selected: "+ selectedItem.getValue());
+                    if(!AssistFunction.IsEmptyOrNull(selectedItem.getValue()))
+                        System.out.println("User selected: "+ selectedItem.getValue());
                     if(!AssistFunction.IsEmptyOrNull(selectedItem.getValue())) {
                         _lastSelection = 0;
                         Matcher m = Pattern.compile("\\(([^)]+)\\)").matcher(selectedItem.getValue());
@@ -327,7 +556,6 @@ public class InventoryController {
             if(AssistFunction.IsEmptyOrNull(filter))
                 searchBox.setText("*");
             selectionView.getChildren().add(tree);
-            //selectionView.setStyle("/Design/TreeView.css");
             if(split.getDividers().get(0).getPosition()>0.5)
                 split.getDividers().get(0).setPosition(0.50);
         } catch(Exception er) {

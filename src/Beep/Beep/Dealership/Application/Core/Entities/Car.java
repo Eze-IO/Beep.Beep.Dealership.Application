@@ -22,4 +22,10 @@ public class Car extends Vehicle {
             return false;
         }
     }
+
+    //Make method the accessible for Car class
+    @Override
+    public Vehicle toVehicle() {
+        return super.toVehicle();
+    }
 }

@@ -51,6 +51,10 @@
    -fx-effect: none;
  }
 
+ .dialog-pane .button:pressed {
+  -fx-effect: dropshadow(gaussian, #16a085, 2, 1, 2.5, 1);
+ }
+
  .alert.confirmation.dialog-pane,
  .text-input-dialog.dialog-pane,
  .choice-dialog.dialog-pane {

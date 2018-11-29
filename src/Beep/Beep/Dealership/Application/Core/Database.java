@@ -12,15 +12,27 @@ import Beep.Beep.Dealership.Application.Core.Entities.Vehicle;
 import com.google.gson.*;
 import org.json.*;
 
+/*
+    Class for interacting with the No-SQL AWS DynamoDB database.
+ */
 public class Database {
+    /*--------------------------------------------------------------------------------------------------------------------------------------*/
+    //Links for making api calls to the AWS Lambda functions
     private static final String _getListUrl = "https://vo4yd50tli.execute-api.us-east-1.amazonaws.com/prod/BeepBeepInventoryGetList";
     private static final String _getItemUrl = "https://unyka7kh40.execute-api.us-east-1.amazonaws.com/prod/BeepBeepInventoryGetItem";
     private static final String _putItemUrl = "https://inout6gox5.execute-api.us-east-1.amazonaws.com/prod/BeepBeepInventoryPutItem";
     private static final String _deleteItemUrl = "https://342cdgz7r4.execute-api.us-east-1.amazonaws.com/prod/BeepBeepInventoryDeleteItem";
+    /*--------------------------------------------------------------------------------------------------------------------------------------*/
 
+    /*
+        Get all 'car' items in the database
+        returns an array of 'Car' objects
+        if successful & if not it returns null.
+     */
     public static Car[] getAllItems(){
         HttpURLConnection conn = null;
         try {
+            //Check if there is internet
             if(!AssistFunction.IsInternetAvailable()){
                 Library.writeLog("No internet connection available!", LogType.WARN);
                 return null;
@@ -74,6 +86,11 @@ public class Database {
     }
 
     private static String _lastSearch = null;
+    /*
+        Get last search from calling the
+        'searchForItems(String search)'
+        method. Can return as an empty string.
+     */
     public static String getLastSearch() {
         if(AssistFunction.IsEmptyOrNull(_lastSearch))
             return ("");
@@ -81,6 +98,12 @@ public class Database {
     }
 
     private static final String _all = "*";
+    /*
+        Search for all 'car' items in the database
+        that contains the search words and returns
+        an array of 'Car' objects matching the search
+        if successful & if not it returns null.
+     */
     public static Car[] searchForItems(String search){
         try {
             _lastSearch = search;
@@ -118,6 +141,10 @@ public class Database {
         }
     }
 
+    /*
+        Gets a 'car' item in the database by ID
+        and returns true if the item exists.
+     */
     public static Car getAnItem(int ID){
         HttpURLConnection conn = null;
         try{
@@ -173,6 +200,10 @@ public class Database {
         }
     }
 
+    /*
+        Saves a 'car' item in the database
+        and returns true if the item was saved.
+     */
     public static Boolean saveAnItem(Vehicle machine){
         HttpURLConnection conn = null;
         try{
@@ -215,19 +246,17 @@ public class Database {
         }
     }
 
+    /*
+        Updates an existing 'car' item
+        in the database and returns true
+        if the item was updated.
+     */
     public static Boolean updateAnItem(Car car){
         try{
+            //Check if 'car' actually exists
             Car c = getAnItem(car.getID());
             if(car.equals(c)){
-                Vehicle v = new Vehicle();
-                v.name = car.name;
-                v.make = car.make;
-                v.model = car.model;
-                v.color = car.color;
-                v.year = car.year;
-                v.price = car.price;
-                v.sold = car.sold;
-                if(saveAnItem(v))
+                if(saveAnItem(car.toVehicle()))
                     return removeAnItem(car.getID());
             }
             return false;
@@ -239,6 +268,10 @@ public class Database {
         }
     }
 
+    /*
+        Removes a 'car' item in the database by ID
+        and returns true if the item doesn't exist.
+     */
     public static Boolean removeAnItem(int ID){
         HttpURLConnection conn = null;
         try{

@@ -8,4 +8,17 @@ public class Vehicle {
     public boolean sold;
     public String name;
     public int year;
+
+    //Get base class for inherited objects
+    protected Vehicle toVehicle() {
+        Vehicle v = new Vehicle();
+        v.name = this.name;
+        v.make = this.make;
+        v.model = this.name;
+        v.color = this.color;
+        v.year = this.year;
+        v.price = this.price;
+        v.sold = this.sold;
+        return v;
+    }
 }

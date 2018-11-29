@@ -3,6 +3,10 @@ package Beep.Beep.Dealership.Application.UI;
 import Beep.Beep.Dealership.Application.Core.Information;
 import javafx.application.Application;
 import java.util.*;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.layout.*;
 import javafx.scene.*;
 import javafx.stage.*;
@@ -70,5 +74,18 @@ public class Screens {
             this.main.getWindow().centerOnScreen();
         }
         catch (Exception ex) { return; }
+    }
+
+    public static void showMessage(String message){
+        showMessage(message, Alert.AlertType.INFORMATION);
+    }
+
+    public static void showMessage(String message, Alert.AlertType type){
+        Alert alert = new Alert(type, null, ButtonType.OK);
+        alert.setTitle(Information.getTitle());
+        alert.setHeaderText(message);
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add("css/ShowMessage.css"); //Add custom css
+        alert.showAndWait();
     }
 }

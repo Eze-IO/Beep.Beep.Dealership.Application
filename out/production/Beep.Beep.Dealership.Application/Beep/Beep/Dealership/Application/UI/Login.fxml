@@ -67,7 +67,7 @@
             <AnchorPane prefHeight="45.0" prefWidth="350.0">
                <children>
                   <TextField fx:id="usernameBox" prefHeight="27.0" prefWidth="350.0" promptText="username" stylesheets="@Design/TextField.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Button fx:id="uclearSearch" layoutX="323.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@Design/ClearButton.css" text="X" textFill="#7f8c8d" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Button fx:id="uclearSearch" layoutX="323.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@Design/ClearButton.css" text="X" textFill="#7f8c8d" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -80,7 +80,7 @@
             <AnchorPane prefHeight="43.0" prefWidth="350.0">
                <children>
                   <PasswordField fx:id="passwordBox" prefHeight="27.0" prefWidth="350.0" promptText="password" stylesheets="@Design/TextField.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Button fx:id="pclearSearch" layoutX="323.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@Design/ClearButton.css" text="X" textFill="#7f8c8d" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Button fx:id="pclearSearch" layoutX="323.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@Design/ClearButton.css" text="X" textFill="#7f8c8d" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>

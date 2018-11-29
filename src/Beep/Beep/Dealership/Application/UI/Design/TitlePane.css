@@ -4,6 +4,10 @@
     -fx-background-radius: 0 0 3 3;
 }
 
+.titled-pane {
+    -fx-effect: dropshadow(three-pass-box, #263238, 0.5, 4, 0, 4);
+}
+
 .titled-pane .label{
     -fx-text-fill: #263238;
 }

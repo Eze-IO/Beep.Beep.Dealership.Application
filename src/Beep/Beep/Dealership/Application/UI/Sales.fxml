@@ -41,7 +41,7 @@
           <AnchorPane fx:id="modelRightSide" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <TextField fx:id="searchBox" layoutX="61.0" layoutY="82.0" prefHeight="30.0" prefWidth="500.0" promptText="type here to search" stylesheets="@Design/TextField.css" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="29.0" />
-                  <Button fx:id="searchButton" layoutX="61.0" layoutY="126.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="500.0" stylesheets="@Design/Button.css" text="SEARCH" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="29.0" />
+                  <Button fx:id="searchButton" layoutX="61.0" layoutY="135.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="500.0" stylesheets="@Design/Button.css" text="SEARCH" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="29.0" />
                   <Button fx:id="sellButton" disable="true" layoutX="61.0" layoutY="234.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="500.0" stylesheets="@Design/Button.css" text="SELL" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="29.0" />
                   <Separator layoutX="61.0" layoutY="183.0" prefHeight="2.0" prefWidth="500.0" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="29.0" />
                   <Label alignment="CENTER" layoutX="61.0" layoutY="203.0" prefHeight="20.0" prefWidth="500.0" stylesheets="@Design/Label.css" text="Other options" textAlignment="CENTER" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="29.0" />

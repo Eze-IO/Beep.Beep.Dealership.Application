@@ -1,14 +1,19 @@
 package Beep.Beep.Dealership.Application;
 
 import Beep.Beep.Dealership.Application.Core.Information;
+import Beep.Beep.Dealership.Application.UI.Screens;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import Beep.Beep.Dealership.Application.Core.*;
+import javax.swing.*;
+import java.awt.*;
+import javax.swing.plaf.metal.*;
 
 public class Main extends Application {
 
@@ -20,7 +25,7 @@ public class Main extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("UI/Login.fxml"));
             primaryStage.setTitle(Information.getTitle());
             primaryStage.setScene(new Scene(root, 900, 600));
-            primaryStage.getIcons().add(new Image("/images/balloons.png"));
+            primaryStage.getIcons().add(new Image("/images/wheel.png"));
 
             //Set window size(s)
             primaryStage.setMinHeight(primaryStage.getHeight());
@@ -33,7 +38,7 @@ public class Main extends Application {
         }
         catch (Exception ex) {
             Library.writeLog(ex, LogType.CRITICAL_ERROR);
-            Platform.exit();
+            Platform.exit(); //Close on error
         }
     }
 

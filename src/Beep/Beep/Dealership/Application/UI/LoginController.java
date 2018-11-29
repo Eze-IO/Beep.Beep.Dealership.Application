@@ -3,25 +3,19 @@ package Beep.Beep.Dealership.Application.UI;
 import Beep.Beep.Dealership.Application.Core.AssistFunction;
 import Beep.Beep.Dealership.Application.Core.Information;
 import Beep.Beep.Dealership.Application.Core.Library;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.control.*;
 import javafx.application.*;
-import javafx.util.Callback;
 import javafx.scene.control.Alert.*;
-import java.io.*;
 
+//Controller class for 'Login.fxml'
 public class LoginController {
+
+    //List of ui components
     @FXML
     private BorderPane frame;
     @FXML
@@ -44,51 +38,60 @@ public class LoginController {
     private Menu helpMenu;
     @FXML
     private MenuItem logItem;
+    /*-------------------------*/
 
     public void initialize() {
         try{
+
+            //Empty login status label on initialization
             updateStatus(null);
+
+            //Set 'exit' menu item click event
             exitItem.setOnAction(event -> {
                 Platform.exit();
             });
 
+            //Set 'about' menu item click event
             aboutItem.setOnAction(event -> {
                 Alert alert = new Alert(AlertType.INFORMATION, null, ButtonType.OK);
                 alert.setTitle("About");
                 alert.setHeaderText(Information.getTitle());
                 alert.setContentText(Information.getCompanyInfo());
                 DialogPane dialogPane = alert.getDialogPane();
-                dialogPane.getStylesheets().add("css/Dialog.css");
+                dialogPane.getStylesheets().add("css/Dialog.css"); //Add custom css
                 alert.showAndWait();
             });
 
+            //Set 'exit' menu item click event
             submitButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    switchToInventoryScreen();
+                    attemptLogin();
                 }
             });
 
-            //Clear search text field on 'X' click
+            //Clear username text field on 'X' click
             uclearSearch.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
                     usernameBox.setText(null);
                 }
             });
 
-            //Clear search text field on 'X' click
+            //Clear password text field on 'X' click
             pclearSearch.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
                     passwordBox.setText(null);
                 }
             });
 
+            //Set 'X' button visibility when username text changes or is empty
             usernameBox.textProperty().addListener((obs, oldText, newText) -> {
                 uclearSearch.setVisible(true);
-                if(AssistFunction.IsEmptyOrNull(usernameBox.getText())){
+                if(AssistFunction.IsEmptyOrNull(usernameBox.getText())||passwordBox.getText().length()<=0){
                     uclearSearch.setVisible(false);
                 }
             });
 
+            //Set 'X' button visibility when password text changes or is empty
             passwordBox.textProperty().addListener((obs, oldText, newText) -> {
                 pclearSearch.setVisible(true);
                 if(AssistFunction.IsEmptyOrNull(passwordBox.getText())||passwordBox.getText().length()<=0){
@@ -96,18 +99,38 @@ public class LoginController {
                 }
             });
 
+            /*
+               Set event when the 'help' menu is
+               showing and set the 'Open events logs'
+               to visible if it exists
+            */
             helpMenu.setOnShowing(event -> {
                 logItem.setDisable(true);
                 if(Library.logFileExists())
                     logItem.setDisable(false);
             });
 
+            /*
+                Set event for 'Open events logs'
+                menu item when it's is clicked
+             */
             logItem.setOnAction(event -> {
                 AssistFunction.OpenFile(Library.getLogFile());
             });
         } catch (Exception ex){
             Library.writeLog(ex);
         }
+    }
+
+    private String username;
+    private String password;
+
+    //Logs the user in and switches the page if successful
+    private void attemptLogin() {
+        username = ((AssistFunction.IsEmptyOrNull(usernameBox.getText())) ? "N/A" : usernameBox.getText());
+        Library.writeLog(String.format("User '%s' has logged in!", username));
+        password = null;
+        switchToInventoryScreen();
     }
 
     //Switches to the inventory screen
@@ -125,6 +148,7 @@ public class LoginController {
         }
     }
 
+    //Sets the text in the status label on the UI
     private void updateStatus(String message){
         if(!AssistFunction.IsEmptyOrNull(message))
             statusMessage.setText(message);

@@ -1,10 +1,7 @@
 package Beep.Beep.Dealership.Application.UI;
 
-import Beep.Beep.Dealership.Application.Core.AssistFunction;
-import Beep.Beep.Dealership.Application.Core.Database;
+import Beep.Beep.Dealership.Application.Core.*;
 import Beep.Beep.Dealership.Application.Core.Entities.Car;
-import Beep.Beep.Dealership.Application.Core.Information;
-import Beep.Beep.Dealership.Application.Core.Library;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -22,9 +19,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.Parent;
+import java.util.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -283,13 +282,202 @@ public class SalesController {
             for(Car c : list){
                 rootItem.getChildren().add(new TreeItem<String> (String.format("ID (%d)", c.getID()), carIcon()));
                 TreeItem<String> t = rootItem.getChildren().get(i);
-                if(!AssistFunction.IsEmptyOrNull(c.name) && c.sold)
-                    t.getChildren().add(new TreeItem<String> (String.format("Customer name: %s", c.name), nameIcon()));
-                if(c.sold)
-                    t.getChildren().add(new TreeItem<String> ("Status: sold", soldIcon()));
-                else
-                    t.getChildren().add(new TreeItem<String> ("Status: unsold", soldIcon()));
-                t.getChildren().add(new TreeItem<String> (String.format("$%s", c.price), priceIcon()));
+                if(!AssistFunction.IsEmptyOrNull(c.name) && c.sold){
+                    HBox hbox = new HBox(5);
+                    Label k = new Label();
+                    Label v = new Label();
+                    k.setText("Customer name:");
+                    v.setText(c.name);
+                    TextField tf = new TextField(v.getText());
+                    hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+                                if(mouseEvent.getClickCount() == 2){
+                                    if(!hbox.getChildren().contains(tf)){
+                                        tf.setOnKeyPressed(new EventHandler<KeyEvent>()
+                                        {
+                                            @Override
+                                            public void handle(KeyEvent ke)
+                                            {
+                                                if(ke.getCode().equals(KeyCode.ENTER)){
+                                                    int id = c.getID();
+                                                    Car cu = Database.getAnItem(id);
+                                                    if(cu != null){
+                                                        cu.name= tf.getText();
+                                                        if(Database.updateAnItem(cu)){
+                                                            v.setText(tf.getText());
+                                                        }
+                                                    }else {
+                                                        Library.writeLog(String.format("Encountered issue when updating ID(%s) item's customer name!", c.getID()), LogType.WARN);
+                                                        refreshView();
+                                                    }
+                                                    hbox.getChildren().removeAll(k, tf);
+                                                    hbox.getChildren().addAll(k, v);
+                                                }
+                                            }
+                                        });
+                                        tf.focusedProperty().addListener((ov, oldV, newV) -> {
+                                            if(!newV) {
+                                                try{
+                                                    tf.setText(c.name);
+                                                    hbox.getChildren().removeAll(tf);
+                                                    hbox.getChildren().addAll(v);
+                                                }
+                                                catch(Exception ex) { return; }
+                                            }
+                                        });
+                                        hbox.getChildren().removeAll(k, v);
+                                        hbox.getChildren().addAll(k, tf);
+                                    }
+                                }
+                            }
+                        }
+                    });
+                    hbox.getChildren().addAll(nameIcon(), k, v);
+                    t.getChildren().add(new TreeItem<String> ("", hbox));
+                }
+                if(!AssistFunction.IsEmptyOrNull(Boolean.toString(c.sold))) {
+                    String _sold = null;
+                    if(c.sold)
+                        _sold = "sold";
+                    else
+                        _sold = "unsold";
+                    HBox hbox = new HBox(5);
+                    Label k = new Label();
+                    Label v = new Label();
+                    k.setText("Status:");
+                    v.setText(_sold);
+                    TextField tf = new TextField(v.getText());
+                    hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+                                if(mouseEvent.getClickCount() == 2){
+                                    if(!hbox.getChildren().contains(tf)){
+                                        tf.setOnKeyPressed(new EventHandler<KeyEvent>()
+                                        {
+                                            @Override
+                                            public void handle(KeyEvent ke)
+                                            {
+                                                if(ke.getCode().equals(KeyCode.ENTER)){
+                                                    int id = c.getID();
+                                                    Car cu = Database.getAnItem(id);
+                                                    if(cu != null){
+                                                        Boolean _s = false;
+                                                        if(tf.getText().equals("sold"))
+                                                            _s = true;
+                                                        cu.sold = _s;
+                                                        if(Database.updateAnItem(cu)){
+                                                            String nt = "unsold";
+                                                            if(_s)
+                                                                nt = "sold";
+                                                            v.setText(nt);
+                                                        }
+                                                    }else {
+                                                        Library.writeLog(String.format("Encountered issue when updating ID(%s) item's status!", c.getID()), LogType.WARN);
+                                                        refreshView();
+                                                    }
+                                                    hbox.getChildren().removeAll(k, tf);
+                                                    hbox.getChildren().addAll(k, v);
+                                                }
+                                            }
+                                        });
+                                        tf.focusedProperty().addListener((ov, oldV, newV) -> {
+                                            if(!newV) {
+                                                try{
+                                                    String _s = null;
+                                                    if(c.sold)
+                                                        _s = "sold";
+                                                    else
+                                                        _s = "unsold";
+                                                    tf.setText(_s);
+                                                    hbox.getChildren().removeAll(tf);
+                                                    hbox.getChildren().addAll(v);
+                                                }
+                                                catch(Exception ex) { return; }
+                                            }
+                                        });
+                                        hbox.getChildren().removeAll(k, v);
+                                        hbox.getChildren().addAll(k, tf);
+                                    }
+                                }
+                            }
+                        }
+                    });
+                    hbox.getChildren().addAll(soldIcon(), k, v);
+                    t.getChildren().add(new TreeItem<String> ("", hbox));
+                }
+                if(!AssistFunction.IsEmptyOrNull(Integer.toString((int)c.price))) {
+                    HBox hbox = new HBox(5);
+                    Label k = new Label();
+                    Label v = new Label();
+                    k.setText("Price:");
+                    v.setText(String.format("$%s", c.price));
+                    TextField tf = new TextField(v.getText());
+                    hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+                                if(mouseEvent.getClickCount() == 2){
+                                    if(!hbox.getChildren().contains(tf)){
+                                        tf.setOnKeyPressed(new EventHandler<KeyEvent>()
+                                        {
+                                            @Override
+                                            public void handle(KeyEvent ke)
+                                            {
+                                                if(ke.getCode().equals(KeyCode.ENTER)){
+                                                    int id = c.getID();
+                                                    Car cu = Database.getAnItem(id);
+                                                    if(cu != null){
+                                                        Pattern p = Pattern.compile("(\\d+(?:\\.\\d+))");
+                                                        Matcher m = p.matcher(tf.getText());
+                                                        while(m.find()) {
+                                                            cu.price = Double.parseDouble(m.group(1));
+                                                            System.out.println(Double.parseDouble(m.group(1)));
+                                                        }
+                                                        if(Database.updateAnItem(cu)){
+                                                            v.setText(tf.getText());
+                                                        }
+                                                    }else {
+                                                        Library.writeLog(String.format("Encountered issue when updating ID(%s) item's price!", c.getID()), LogType.WARN);
+                                                        refreshView();
+                                                    }
+                                                    hbox.getChildren().removeAll(k, tf);
+                                                    hbox.getChildren().addAll(k, v);
+                                                }
+                                            }
+                                        });
+                                        tf.focusedProperty().addListener((ov, oldV, newV) -> {
+                                            if(!newV) {
+                                                try{
+                                                    tf.setText(String.format("$%s", c.price));
+                                                    hbox.getChildren().removeAll(tf);
+                                                    hbox.getChildren().addAll(v);
+                                                }
+                                                catch(Exception ex) { return; }
+                                            }
+                                        });
+                                        tf.textProperty().addListener((obs, oldText, newText) -> {
+                                            try{
+                                                if(!newText.matches("\\$\\d*(\\.\\d*)?")) {
+                                                    tf.setText(newText.replaceAll("[^\\d]", ""));
+                                                }
+                                            }
+                                            catch(Exception ex){
+                                                return;
+                                            }
+                                        });
+                                        hbox.getChildren().removeAll(k, v);
+                                        hbox.getChildren().addAll(k, tf);
+                                    }
+                                }
+                            }
+                        }
+                    });
+                    hbox.getChildren().addAll(priceIcon(), k, v);
+                    t.getChildren().add(new TreeItem<String> ("", hbox));
+                }
                 i++;
             }
             TreeView<String> tree = new TreeView<String> (rootItem);
@@ -299,7 +487,8 @@ public class SalesController {
                     inventoryButton.setDisable(true);
                     sellButton.setDisable(true);
                     TreeItem<String> selectedItem = (TreeItem<String>) newValue;
-                    System.out.println("User selected: "+ selectedItem.getValue());
+                    if(!AssistFunction.IsEmptyOrNull(selectedItem.getValue()))
+                        System.out.println("User selected: "+ selectedItem.getValue());
                     if(!AssistFunction.IsEmptyOrNull(selectedItem.getValue())) {
                         _lastSelection = 0;
                         Matcher m = Pattern.compile("\\(([^)]+)\\)").matcher(selectedItem.getValue());
