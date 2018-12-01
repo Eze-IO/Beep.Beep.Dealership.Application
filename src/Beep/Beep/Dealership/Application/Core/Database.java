@@ -37,12 +37,18 @@ public class Database {
                 Library.writeLog("No internet connection available!", LogType.WARN);
                 return null;
             }
-            conn = (HttpURLConnection)new URL(_getListUrl).openConnection();
+            conn = (HttpURLConnection)new URL(_getListUrl).openConnection(); // Open link to get response
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
             if(conn.getResponseCode() != 200) {
+                //A response code of 500 or any other means it failed to get the item from api link
                 Library.writeLog("Failed to get all item!", LogType.WARN);
             } else {
+                /*
+                    Get response from link, convert it the JSON
+                    response to an array of 'Car' objects then
+                    of course return it
+                 */
                 StringBuilder result = new StringBuilder();
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 result.append(br.readLine());
@@ -112,6 +118,12 @@ public class Database {
                 _lastSearch = _all;
                 return Database.getAllItems();
             }
+            /*
+                Get list of all items or 'cars' in the database
+                then format every attribute about the car in a string
+                to see if the search is within the string, if it is then
+                add it to a the list object and return the list in a 'car' array object.
+            */
             List<Car> co = new ArrayList<Car>();
             Car[] list = Database.getAllItems();
             for(int x=0;x<list.length;x++){
@@ -148,15 +160,17 @@ public class Database {
     public static Car getAnItem(int ID){
         HttpURLConnection conn = null;
         try{
+            //Check if there is internet
             if(!AssistFunction.IsInternetAvailable()){
                 Library.writeLog("No internet connection available!", LogType.WARN);
                 return null;
             }
-            conn = (HttpURLConnection)new URL(_getItemUrl).openConnection();
+            conn = (HttpURLConnection)new URL(_getItemUrl).openConnection(); // Open link to get response
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Accept", "application/json");
 
+            //Send a request to the server of an id, in JSON format
             JsonObject requestID = new JsonObject();
             requestID.addProperty("ID", Integer.toString(ID));
             OutputStream os = conn.getOutputStream();
@@ -164,8 +178,13 @@ public class Database {
             os.flush();
 
             if(conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                //A response code of 500 or any other means it failed to get the item from api link
                 Library.writeLog("Failed to get item!", LogType.WARN);
             } else {
+                /*
+                    Get response from server and convert it to a 'car' object
+                    and return the object. return null if error occurs
+                 */
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 StringBuilder result = new StringBuilder(br.readLine());
                 JSONObject obj = new JSONObject(result.toString());
@@ -207,15 +226,20 @@ public class Database {
     public static Boolean saveAnItem(Vehicle machine){
         HttpURLConnection conn = null;
         try{
+            //Check if there is internet
             if(!AssistFunction.IsInternetAvailable()){
                 Library.writeLog("No internet connection available!", LogType.WARN);
                 return false;
             }
-            conn = (HttpURLConnection)new URL(_putItemUrl).openConnection();
+            conn = (HttpURLConnection)new URL(_putItemUrl).openConnection(); // Open link to get response
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Accept", "application/json");
 
+            /*
+                Send car object to server as request in the JSON format
+                the response will retrun true, if it worked!
+             */
             JsonObject requestID = new JsonObject();
             requestID.addProperty("Name", machine.name);
             requestID.addProperty("Make", machine.make);
@@ -229,6 +253,7 @@ public class Database {
             os.flush();
 
             if(conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                //A response code of 500 or any other means it failed to put the item from api link
                 Library.writeLog("Failed to save item!", LogType.WARN);
             } else {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -255,7 +280,7 @@ public class Database {
         try{
             //Check if 'car' actually exists
             Car c = getAnItem(car.getID());
-            if(car.equals(c)){
+            if(car.equals(c)){ //if the car exists we save the new 'car' object and remove the old one
                 if(saveAnItem(car.toVehicle()))
                     return removeAnItem(car.getID());
             }
@@ -279,11 +304,15 @@ public class Database {
                 Library.writeLog("No internet connection available!", LogType.WARN);
                 return false;
             }
-            conn = (HttpURLConnection)new URL(_deleteItemUrl).openConnection();
+            conn = (HttpURLConnection)new URL(_deleteItemUrl).openConnection(); //Open link to get response
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Accept", "application/json");
 
+            /*
+                Send id of car to be deleted in JSON format to server
+                server returns a response of true if the car doesn't exists
+             */
             JsonObject requestID = new JsonObject();
             requestID.addProperty("ID", Integer.toString(ID));
             OutputStream os = conn.getOutputStream();
@@ -291,7 +320,8 @@ public class Database {
             os.flush();
 
             if(conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                Library.writeLog("Falied to remove item!", LogType.WARN);
+                //A response code of 500 or any other means it failed to remove the item from api link
+                Library.writeLog("Failed to remove item!", LogType.WARN);
             } else {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 return Boolean.parseBoolean(br.readLine().trim());

@@ -8,8 +8,10 @@ import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.io.*;
 
+//Class for logging errors & information
 public class Library {
 
+    //Create directory for log file
     private static String getDirectoryName(){
         String name = "Beep.Beep.Dealership.Application";
         if(System.getProperty("os.name").startsWith("Windows")){
@@ -18,6 +20,8 @@ public class Library {
             return String.format(".%s", name);
         }
     }
+
+    //Path to log file
     private static Path _logFile = Paths.get(System.getProperty("user.home").toString(), getDirectoryName(), "event.log");
     public static String getLogFile() {
         createLogFile();
@@ -28,6 +32,7 @@ public class Library {
         return new File(_logFile.toAbsolutePath().toString()).exists();
     }
 
+    //Create a log file if it doesn't exist on the home directory of the user
     private static void createLogFile(){
         try {
             File f = new File(_logFile.toAbsolutePath().toString());
@@ -47,6 +52,7 @@ public class Library {
         }
     }
 
+    //Deletes log file created by 'createLogFile()' method
     private static void deleteLogFile(){
         try{
             File f = new File(_logFile.toAbsolutePath().toString());
@@ -60,18 +66,22 @@ public class Library {
         }
     }
 
+    //Write log to output and file
     public static void writeLog(String message){
         writeActualLog(message, LogType.INFO);
     }
 
+    //Write log to output and file
     public static void writeLog(String message, LogType type){
         writeActualLog(message, type);
     }
 
+    //Write log to output and file for exceptions
     public static void writeLog(Exception ex){
         writeActualLog(String.format("(%s) %s", ex.hashCode(), ex.getMessage()), LogType.ERROR);
     }
 
+    //Write log to output and file for exceptions
     public static void writeLog(Exception ex, LogType type){
         writeActualLog(String.format("(%s) %s", ex.hashCode(), ex.getMessage()), type);
     }

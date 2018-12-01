@@ -122,6 +122,7 @@ public class LoginController {
         }
     }
 
+    //Variables for storing credentials
     private String username;
     private String password;
 

@@ -11,7 +11,7 @@ import java.net.*;
 public class AssistFunction {
     //Check if string is empty or null, returns true if null or empty!
     public static Boolean IsEmptyOrNull(String str){
-        if(str == null || str.isEmpty())
+        if(str == null || str.isEmpty() || str.trim().length() <= 0)
             return true;
         return false;
     }
