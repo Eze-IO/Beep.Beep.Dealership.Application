@@ -102,7 +102,10 @@ public class SalesController {
                         SellController controller = new SellController();
                         controller.setItemID(_lastSelection);
                         fxmlLoader.setController(controller);
-                        s.showWindow((Parent)fxmlLoader.load());
+                        String _title = "Sell Car";
+                        if(_lastSelection != 0)
+                            _title = "Sell Car with ID("+_lastSelection+")";
+                        s.showWindow((Parent)fxmlLoader.load(), _title);
                         if(c!=null)
                             if(c.sold)
                                 populateView(c.name);

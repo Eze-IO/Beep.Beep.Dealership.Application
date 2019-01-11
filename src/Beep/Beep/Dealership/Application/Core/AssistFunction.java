@@ -29,6 +29,16 @@ public class AssistFunction {
         }
     }
 
+    //Determines if a string is a valid number
+    public static boolean IsNumber(String str) {
+        try {
+            double v = Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException nfe) {
+        }
+        return false;
+    }
+
     //Opens a file, returns false on error
     public static Boolean OpenFile(String pathToFile){
         try {

@@ -19,6 +19,7 @@ import javafx.geometry.*;
 
 import java.util.regex.*;
 import javafx.event.*;
+import javafx.scene.text.Text;
 
 public class InventoryController {
 
@@ -88,7 +89,7 @@ public class InventoryController {
                 @Override public void handle(ActionEvent e) {
                     try {
                         Screens s = new Screens(frame.getScene());
-                        s.showWindow("AddInventory.fxml");
+                        s.showWindow("AddInventory.fxml", "Add to Inventory");
                         if(!AssistFunction.IsEmptyOrNull(searchBox.getText()))
                             refreshView();
                     }
@@ -469,13 +470,16 @@ public class InventoryController {
 
                 HBox hbox4 = new HBox(5);
                 Label ck = new Label();
-                Label cv = new Label();
+                Text cv = new Text(c.color);
                 ck.setText("Color:");
                 cv.setText(c.color);
-                cv.setTextFill(Color.web("#ecf0f1"));
+                cv.setFill(Color.web("#ecf0f1"));
                 try{
-                    Color color = Color.valueOf(c.color);
-                    cv.setStyle("-fx-text-fill: "+c.color);
+                    String col = c.color;
+                    if(AssistFunction.IsNumber(c.color))
+                        col = "#ecf0f1";
+                    //cv.setStyle("-fx-text-fill: "+col);
+                    cv.setFill(Color.web(col));
                 }catch(Exception ex) { /* do nothing */ }
                 if(cv.isCache())
                     cv.setCache(false);
@@ -498,6 +502,13 @@ public class InventoryController {
                                                     cu.color = ct.getText();
                                                     if(Database.updateAnItem(cu)){
                                                         cv.setText(ct.getText());
+                                                        try{
+                                                            String col = cu.color;
+                                                            if(AssistFunction.IsNumber(c.color))
+                                                                col = "#ecf0f1";
+                                                            cv.setFill(Color.web(col));
+                                                        }catch(Exception ex) { /* do nothing */ }
+
                                                     }
                                                 } else {
                                                     Library.writeLog(String.format("Encountered issue when updating ID(%s) item's color!", c.getID()), LogType.WARN);

@@ -1,5 +1,6 @@
 package Beep.Beep.Dealership.Application.UI;
 
+import Beep.Beep.Dealership.Application.Core.AssistFunction;
 import Beep.Beep.Dealership.Application.Core.Information;
 import Beep.Beep.Dealership.Application.Core.Library;
 import javafx.application.Application;
@@ -8,6 +9,7 @@ import java.util.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.*;
 import javafx.stage.*;
@@ -37,20 +39,20 @@ public class Screens {
         main.getWindow().sizeToScene();
     }
 
-    public void showWindow(String pathToFXML) {
+    public void showWindow(String pathToFXML, String title) {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(pathToFXML));
-            this.showActualWindow((Parent)fxmlLoader.load(), 450, 300, true);
+            this.showActualWindow((Parent)fxmlLoader.load(), title,450, 300, true);
         } catch (Exception ex){
             return;
         }
     }
 
-    public void showWindow(Parent fxmlParent) {
-        this.showActualWindow(fxmlParent, 450, 300, true);
+    public void showWindow(Parent fxmlParent, String title) {
+        this.showActualWindow(fxmlParent, title, 450, 300, true);
     }
 
-    public void showActualWindow(Parent fxmlParent, int width, int height, Boolean blockOwner) {
+    public void showActualWindow(Parent fxmlParent, String title, int width, int height, Boolean blockOwner) {
         try {
             Parent root = fxmlParent;
             Stage stage = new Stage();
@@ -58,8 +60,11 @@ public class Screens {
                 stage.initModality(Modality.WINDOW_MODAL);
                 stage.initOwner(this.main.getWindow());
             }
-            stage.setTitle(Information.getTitle());
+            if(AssistFunction.IsEmptyOrNull(title))
+                title = Information.getTitle();
+            stage.setTitle(title);
             stage.setScene(new Scene(root, width, height));
+            stage.getIcons().add(new Image("/images/wheel.png"));
             stage.sizeToScene();
             if(blockOwner)
                 stage.showAndWait();
