@@ -12,8 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextFormatter;
+import javafx.util.StringConverter;
 
 import java.awt.*;
+import java.util.function.UnaryOperator;
+import java.util.regex.Pattern;
 
 public class AddInventoryController {
     @FXML
@@ -56,17 +60,68 @@ public class AddInventoryController {
                 toggleSubmitButton();
             });
 
-            priceBox.textProperty().addListener((obs, oldText, newText) -> {
-                toggleSubmitButton();
-                try{
-                    if(!newText.matches("\\d*(\\.\\d*)?")) {
-                        priceBox.setText(newText.replaceAll("[^\\d]", ""));
+            Pattern validEditingState = Pattern.compile("-?(([1-9][0-9]*)|0)?(\\.[0-9]*)?");
+            UnaryOperator<TextFormatter.Change> nfilter = nc -> {
+                String text = nc.getControlNewText();
+                if (validEditingState.matcher(text).matches()) {
+                    return nc ;
+                } else {
+                    return null ;
+                }
+            };
+            StringConverter<Double> converter = new StringConverter<Double>() {
+
+                @Override
+                public Double fromString(String s) {
+                    if (s.isEmpty() || "-".equals(s) || ".".equals(s) || "-.".equals(s)) {
+                        return 0.0 ;
+                    } else {
+                        return Double.valueOf(s);
                     }
                 }
-                catch(Exception ex){
-                    Library.writeLog(ex);
+
+                @Override
+                public String toString(Double d) {
+                    return d.toString();
                 }
+            };
+            TextFormatter<Double> textFormatter = new TextFormatter<>(converter, 0.0, nfilter);
+            priceBox.setTextFormatter(textFormatter);
+
+            priceBox.textProperty().addListener((obs, oldText, newText) -> {
+                toggleSubmitButton();
             });
+
+            Pattern nvalidEditingState = Pattern.compile("^(197\\d{1}|198\\d{1}|199\\d{1}|200\\d{1}|201\\d{1}|202\\d{1})");
+            UnaryOperator<TextFormatter.Change> nnfilter = nc -> {
+                String text = nc.getControlNewText();
+                if (validEditingState.matcher(text).matches()) {
+                    return nc ;
+                } else {
+                    return null ;
+                }
+            };
+            StringConverter<Integer> nconverter = new StringConverter<Integer>() {
+
+                @Override
+                public Integer fromString(String s) {
+                    if (s.isEmpty()) {
+                        return 0 ;
+                    } else {
+                        return Integer.valueOf(s);
+                    }
+                }
+
+                @Override
+                public String toString(Integer i) {
+                    if(i.toString().length()>4)
+                        return i.toString().substring(0, 4);
+                    else
+                        return i.toString();
+                }
+            };
+            TextFormatter<Integer> ntextFormatter = new TextFormatter<>(nconverter, 0, nnfilter);
+            yearBox.setTextFormatter(ntextFormatter);
 
             yearBox.textProperty().addListener((obs, oldText, newText) -> {
                 toggleSubmitButton();

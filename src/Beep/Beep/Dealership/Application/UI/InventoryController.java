@@ -89,7 +89,8 @@ public class InventoryController {
                     try {
                         Screens s = new Screens(frame.getScene());
                         s.showWindow("AddInventory.fxml");
-                        refreshView();
+                        if(!AssistFunction.IsEmptyOrNull(searchBox.getText()))
+                            refreshView();
                     }
                     catch (Exception ex) {
                         return;
@@ -337,6 +338,7 @@ public class InventoryController {
                                             catch(Exception ex) { return; }
                                         }
                                     });
+                                    mt.setText(mv.getText());
                                     hbox1.getChildren().removeAll(mv);
                                     hbox1.getChildren().addAll(mt);
                                 }
@@ -390,6 +392,7 @@ public class InventoryController {
                                             catch(Exception ex) { return; }
                                         }
                                     });
+                                    mot.setText(mov.getText());
                                     hbox2.getChildren().removeAll(mok, mov);
                                     hbox2.getChildren().addAll(mok, mot);
                                 }
@@ -454,6 +457,7 @@ public class InventoryController {
                                             return;
                                         }
                                     });
+                                    yt.setText(yv.getText());
                                     hbox3.getChildren().removeAll(yk, yv);
                                     hbox3.getChildren().addAll(yk, yt);
                                 }
@@ -470,8 +474,9 @@ public class InventoryController {
                 cv.setText(c.color);
                 cv.setTextFill(Color.web("#ecf0f1"));
                 try{
+                    Color color = Color.valueOf(c.color);
                     cv.setStyle("-fx-text-fill: "+c.color);
-                }catch(Exception ex) { return; }
+                }catch(Exception ex) { /* do nothing */ }
                 if(cv.isCache())
                     cv.setCache(false);
                 TextField ct = new TextField(cv.getText());
@@ -516,6 +521,7 @@ public class InventoryController {
                                             catch(Exception ex) { return; }
                                         }
                                     });
+                                    ct.setText(cv.getText());
                                     hbox4.getChildren().removeAll(ck, cv);
                                     hbox4.getChildren().addAll(ck, ct);
                                 }

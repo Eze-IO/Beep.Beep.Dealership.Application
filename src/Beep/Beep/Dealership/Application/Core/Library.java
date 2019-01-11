@@ -22,7 +22,7 @@ public class Library {
     }
 
     //Path to log file
-    private static Path _logFile = Paths.get(System.getProperty("user.home").toString(), getDirectoryName(), "event.log");
+    private static Path _logFile = Paths.get(System.getProperty("user.home").toString(), getDirectoryName(), "events.log");
     public static String getLogFile() {
         createLogFile();
         return _logFile.toString();
@@ -78,7 +78,10 @@ public class Library {
 
     //Write log to output and file for exceptions
     public static void writeLog(Exception ex){
-        writeActualLog(String.format("(%s) %s", ex.hashCode(), ex.getMessage()), LogType.ERROR);
+        String message = ex.getMessage();
+        if(AssistFunction.IsEmptyOrNull(message))
+            message = "Unknown error!";
+        writeActualLog(String.format("(%s) %s", ex.hashCode(), message), LogType.ERROR);
     }
 
     //Write log to output and file for exceptions

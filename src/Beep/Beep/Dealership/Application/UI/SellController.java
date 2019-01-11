@@ -6,12 +6,18 @@ import Beep.Beep.Dealership.Application.Core.Library;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import Beep.Beep.Dealership.Application.Core.Entities.*;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import javafx.util.StringConverter;
+
+import java.util.function.UnaryOperator;
+import java.util.regex.Pattern;
 
 public class SellController {
+    @FXML
+    private BorderPane frame;
     @FXML
     private TextField customerBox;
     @FXML
@@ -31,16 +37,46 @@ public class SellController {
                 }
             });
 
+            Pattern validEditingState = Pattern.compile("-?(([1-9][0-9]*)|0)?(\\.[0-9]*)?");
+            UnaryOperator<TextFormatter.Change> nfilter = nc -> {
+                String text = nc.getControlNewText();
+                if (validEditingState.matcher(text).matches()) {
+                    return nc ;
+                } else {
+                    return null ;
+                }
+            };
+            StringConverter<Double> converter = new StringConverter<Double>() {
+
+                @Override
+                public Double fromString(String s) {
+                    if (s.isEmpty() || "-".equals(s) || ".".equals(s) || "-.".equals(s)) {
+                        return 0.0 ;
+                    } else {
+                        return Double.valueOf(s);
+                    }
+                }
+
+                @Override
+                public String toString(Double d) {
+                    return d.toString();
+                }
+            };
+            TextFormatter<Double> textFormatter = new TextFormatter<>(converter, 0.0, nfilter);
+            priceBox.setTextFormatter(textFormatter);
+
             priceBox.textProperty().addListener((obs, oldText, newText) -> {
                 toggleSubmitButton();
-                if(!newText.matches("\\d*(\\.\\d*)?")) {
-                    priceBox.setText(newText.replaceAll("[^\\d]", ""));
-                }
             });
 
             customerBox.textProperty().addListener((obs, oldText, newText) -> {
                 toggleSubmitButton();
             });
+
+            try{
+                Car c = Database.getAnItem(_itemID);
+                priceBox.setText(Double.toString(c.price));
+            } catch(Exception ee) { /* ignore */ }
 
             toggleSubmitButton();
         } catch(Exception ex){
@@ -67,6 +103,12 @@ public class SellController {
 
     private void sellItem(){
         try{
+            if(this._itemID == 0) {
+                Screens.showMessage("A car item hasn't been selected!", Alert.AlertType.ERROR);
+                Screens screen = new Screens(frame.getScene());
+                screen.closeWindow();
+                return;
+            }
             if(!AssistFunction.IsEmptyOrNull(customerBox.getText())
                     &&!AssistFunction.IsEmptyOrNull(priceBox.getText())){
                 Car c = Database.getAnItem(_itemID);

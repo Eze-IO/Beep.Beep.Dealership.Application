@@ -14,7 +14,7 @@ public class Vehicle {
         Vehicle v = new Vehicle();
         v.name = this.name;
         v.make = this.make;
-        v.model = this.name;
+        v.model = this.model;
         v.color = this.color;
         v.year = this.year;
         v.price = this.price;

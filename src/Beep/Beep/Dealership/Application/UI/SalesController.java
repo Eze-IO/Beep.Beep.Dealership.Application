@@ -23,8 +23,11 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.Parent;
+import javafx.util.StringConverter;
+
 import java.util.*;
 
+import java.util.function.UnaryOperator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -327,6 +330,7 @@ public class SalesController {
                                                 catch(Exception ex) { return; }
                                             }
                                         });
+                                        tf.setText(v.getText());
                                         hbox.getChildren().removeAll(k, v);
                                         hbox.getChildren().addAll(k, tf);
                                     }
@@ -354,52 +358,11 @@ public class SalesController {
                         public void handle(MouseEvent mouseEvent) {
                             if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
                                 if(mouseEvent.getClickCount() == 2){
-                                    if(!hbox.getChildren().contains(tf)){
-                                        tf.setOnKeyPressed(new EventHandler<KeyEvent>()
-                                        {
-                                            @Override
-                                            public void handle(KeyEvent ke)
-                                            {
-                                                if(ke.getCode().equals(KeyCode.ENTER)){
-                                                    int id = c.getID();
-                                                    Car cu = Database.getAnItem(id);
-                                                    if(cu != null){
-                                                        Boolean _s = false;
-                                                        if(tf.getText().equals("sold"))
-                                                            _s = true;
-                                                        cu.sold = _s;
-                                                        if(Database.updateAnItem(cu)){
-                                                            String nt = "unsold";
-                                                            if(_s)
-                                                                nt = "sold";
-                                                            v.setText(nt);
-                                                        }
-                                                    }else {
-                                                        Library.writeLog(String.format("Encountered issue when updating ID(%s) item's status!", c.getID()), LogType.WARN);
-                                                        refreshView();
-                                                    }
-                                                    hbox.getChildren().removeAll(k, tf);
-                                                    hbox.getChildren().addAll(k, v);
-                                                }
-                                            }
-                                        });
-                                        tf.focusedProperty().addListener((ov, oldV, newV) -> {
-                                            if(!newV) {
-                                                try{
-                                                    String _s = null;
-                                                    if(c.sold)
-                                                        _s = "sold";
-                                                    else
-                                                        _s = "unsold";
-                                                    tf.setText(_s);
-                                                    hbox.getChildren().removeAll(tf);
-                                                    hbox.getChildren().addAll(v);
-                                                }
-                                                catch(Exception ex) { return; }
-                                            }
-                                        });
-                                        hbox.getChildren().removeAll(k, v);
-                                        hbox.getChildren().addAll(k, tf);
+                                    if(!c.sold){
+                                        _lastSelection = c.getID();
+                                        sellButton.setDisable(false);
+                                        sellButton.fire();
+                                        sellButton.setDisable(true);
                                     }
                                 }
                             }
@@ -412,9 +375,38 @@ public class SalesController {
                     HBox hbox = new HBox(5);
                     Label k = new Label();
                     Label v = new Label();
+                    Label ds = new Label();
+                    ds.setText("$");
                     k.setText("Price:");
-                    v.setText(String.format("$%s", c.price));
+                    v.setText(String.format("%s", c.price));
                     TextField tf = new TextField(v.getText());
+                    Pattern validEditingState = Pattern.compile("-?(([1-9][0-9]*)|0)?(\\.[0-9]*)?");
+                    UnaryOperator<TextFormatter.Change> nfilter = nc -> {
+                        String text = nc.getControlNewText();
+                        if (validEditingState.matcher(text).matches()) {
+                            return nc ;
+                        } else {
+                            return null ;
+                        }
+                    };
+                    StringConverter<Double> converter = new StringConverter<Double>() {
+
+                        @Override
+                        public Double fromString(String s) {
+                            if (s.isEmpty() || "-".equals(s) || ".".equals(s) || "-.".equals(s)) {
+                                return 0.0 ;
+                            } else {
+                                return Double.valueOf(s);
+                            }
+                        }
+
+                        @Override
+                        public String toString(Double d) {
+                            return d.toString();
+                        }
+                    };
+                    TextFormatter<Double> textFormatter = new TextFormatter<>(converter, 0.0, nfilter);
+                    tf.setTextFormatter(textFormatter);
                     hbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent mouseEvent) {
@@ -431,51 +423,45 @@ public class SalesController {
                                                     Car cu = Database.getAnItem(id);
                                                     if(cu != null){
                                                         Pattern p = Pattern.compile("(\\d+(?:\\.\\d+))");
-                                                        Matcher m = p.matcher(tf.getText());
-                                                        while(m.find()) {
-                                                            cu.price = Double.parseDouble(m.group(1));
-                                                            System.out.println(Double.parseDouble(m.group(1)));
+                                                        Matcher m = p.matcher(tf.getText().replace('$', ' '));
+                                                        try{
+                                                            while(m.find()) {
+                                                                cu.price = Double.parseDouble(m.group(1));
+                                                                System.out.println("Item's price is $"+Double.parseDouble(m.group(1)));
+                                                            }
+                                                            if(Database.updateAnItem(cu)){
+                                                                v.setText(tf.getText());
+                                                            }
                                                         }
-                                                        if(Database.updateAnItem(cu)){
-                                                            v.setText(tf.getText());
-                                                        }
+                                                        catch (Exception ee) { /* ignore */}
                                                     }else {
                                                         Library.writeLog(String.format("Encountered issue when updating ID(%s) item's price!", c.getID()), LogType.WARN);
                                                         refreshView();
                                                     }
-                                                    hbox.getChildren().removeAll(k, tf);
-                                                    hbox.getChildren().addAll(k, v);
+                                                    hbox.getChildren().removeAll(k, ds, tf);
+                                                    hbox.getChildren().addAll(k, ds, v);
                                                 }
                                             }
                                         });
                                         tf.focusedProperty().addListener((ov, oldV, newV) -> {
                                             if(!newV) {
                                                 try{
-                                                    tf.setText(String.format("$%s", c.price));
+                                                    tf.setText(String.format("%s", c.price));
                                                     hbox.getChildren().removeAll(tf);
                                                     hbox.getChildren().addAll(v);
                                                 }
                                                 catch(Exception ex) { return; }
                                             }
                                         });
-                                        tf.textProperty().addListener((obs, oldText, newText) -> {
-                                            try{
-                                                if(!newText.matches("\\$\\d*(\\.\\d*)?")) {
-                                                    tf.setText(newText.replaceAll("[^\\d]", ""));
-                                                }
-                                            }
-                                            catch(Exception ex){
-                                                return;
-                                            }
-                                        });
-                                        hbox.getChildren().removeAll(k, v);
-                                        hbox.getChildren().addAll(k, tf);
+                                        tf.setText(v.getText());
+                                        hbox.getChildren().removeAll(k, ds, v);
+                                        hbox.getChildren().addAll(k, ds, tf);
                                     }
                                 }
                             }
                         }
                     });
-                    hbox.getChildren().addAll(priceIcon(), k, v);
+                    hbox.getChildren().addAll(priceIcon(), k, ds, v);
                     t.getChildren().add(new TreeItem<String> ("", hbox));
                 }
                 i++;

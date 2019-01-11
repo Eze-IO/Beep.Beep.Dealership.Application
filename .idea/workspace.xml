@@ -7,95 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid69717.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Beep_Beep_Dealership_Application_jar/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Beep_Beep_Dealership_Application_jar/app.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/AssistFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/AssistFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Entities/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Entities/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Entities/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Entities/Vehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Library$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Library$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core (1)/Library.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/AssistFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/AssistFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/Entities/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/Entities/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/Entities/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/Entities/Vehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/ClearButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/ClearButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/OnChangeTextField.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/TextField.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/TextField.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/TitlePane.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/TitlePane.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/TreeView.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Design/TreeView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Inventory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$10$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$11$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$8$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$9$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/InventoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/LoginController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/LoginController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/LoginController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/LoginController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/LoginController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Sales.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Sales.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$7$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$8$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$9$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/SalesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Screens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/UI/Screens.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/META-INF/Beep.Beep.Dealership.Application.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/css/Dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/css/Dialog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/css/ShowMessage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/images/wheel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/Dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/Dialog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/ShowMessage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/wheel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/AssistFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/AssistFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/Beep/Beep/Dealership/Application/Core/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/images/logo_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Beep.Beep.Dealership.Application/images/logo_transparent.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/logo_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/logo_transparent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Information.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Information.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/LogType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/LogType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/ClearButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/ClearButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TextField.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TextField.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TitlePane.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TitlePane.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TreeView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TreeView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Inventory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/InventoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sales.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sales.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SalesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Screens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Screens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SellController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -166,125 +91,45 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1118179068">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="fxml" value="6" />
+          <entry key="java" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="13" />
+          <entry key="XML" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="827" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="827" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2551">
-              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/InventoryController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2634">
-              <caret line="413" column="34" selection-start-line="413" selection-start-column="34" selection-end-line="413" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1583#1584#0" expanded="true" />
-                <element signature="e#1656#1657#0" expanded="true" />
-                <element signature="e#1856#1857#0" expanded="true" />
-                <element signature="e#1906#1907#0" expanded="true" />
-                <element signature="e#3006#3007#0" expanded="true" />
-                <element signature="e#3081#3082#0" expanded="true" />
-                <element signature="e#7105#7106#0" expanded="true" />
-                <element signature="e#7146#7147#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-186">
-              <caret line="313" column="75" lean-forward="true" selection-start-line="313" selection-start-column="75" selection-end-line="313" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Information.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Library.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SalesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4788">
-              <caret line="431" column="67" lean-forward="true" selection-start-line="431" selection-start-column="67" selection-end-line="431" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#24142#24143#0" expanded="true" />
-                <element signature="e#24193#24194#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Car.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Inventory.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Login.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -311,15 +156,11 @@
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Login.css" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/AsisstFunction.java" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Graphic.java" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventoryController.java" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Label.css" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Logo.css" />
         <option value="$PROJECT_DIR$/resources/Dialog.css" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Scene.css" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Dialog.css" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sell.fxml" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventory.fxml" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SellController.java" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Button.css" />
         <option value="$PROJECT_DIR$/resources/css/Dialog.css" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TitlePane.css" />
@@ -331,19 +172,23 @@
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/ClearButton.css" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Car.java" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Vehicle.java" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Screens.java" />
         <option value="$PROJECT_DIR$/resources/css/ShowMessage.css" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Main.java" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TreeView.css" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/InventoryController.java" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SalesController.java" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/AssistFunction.java" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Database.java" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Information.java" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/LogType.java" />
-        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Library.java" />
         <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Vehicle.java" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventory.fxml" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sell.fxml" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Screens.java" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Database.java" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Library.java" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SalesController.java" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SellController.java" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventoryController.java" />
+        <option value="$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/InventoryController.java" />
       </list>
     </option>
   </component>
@@ -360,10 +205,10 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="977" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="943" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -375,7 +220,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -383,41 +227,11 @@
               <item name="Beep.Beep.Dealership.Application" type="b2602c69:ProjectViewProjectNode" />
               <item name="Beep.Beep.Dealership.Application" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Beep.Beep.Dealership.Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Beep.Beep.Dealership.Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Beep.Beep.Dealership.Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Beep.Beep.Dealership.Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Beep.Beep.Dealership.Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Beep.Beep.Dealership.Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Beep.Beep.Dealership.Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Beep.Beep.Dealership.Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Beep.Beep.Dealership.Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Beep.Beep.Dealership.Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,7 +244,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543676203736" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547172657487" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -479,7 +293,7 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration default="true" type="Applet">
+    <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -515,7 +329,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG">
+    <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -526,11 +340,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
+      <predefined_log_file id="idea.log" enabled="true" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -561,17 +375,19 @@
       <workItem from="1543530778205" duration="50000" />
       <workItem from="1543552602586" duration="553000" />
       <workItem from="1543650810784" duration="4378000" />
+      <workItem from="1545784641663" duration="194000" />
+      <workItem from="1547093045939" duration="8762000" />
+      <workItem from="1547151598816" duration="17610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136486000" />
+    <option name="totallyTimeSpent" value="163052000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="977" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21991481" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15104741" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32960597" />
       <window_info id="Designer" order="3" />
@@ -580,7 +396,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32798165" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26467204" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26091477" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39930955" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -653,6 +469,9 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
@@ -694,14 +513,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Dialog.css" />
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventory.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/TitlePane.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -713,17 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="16" column="4" selection-start-line="15" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sell.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SellController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1403">
-          <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -751,14 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sales.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -776,27 +568,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Screens.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="85" column="37" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../CIS 3365/Zeal.Application/src/zeal/application/ui/ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="333" column="13" lean-forward="true" selection-start-line="333" selection-start-column="13" selection-end-line="333" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="78" column="27" selection-start-line="70" selection-start-column="19" selection-end-line="80" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../CIS 3365/Zeal.Application/src/zeal/application/ui/ViewController.java" />
     <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Design/Scene.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-986">
@@ -818,88 +590,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        <state relative-caret-position="272">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Entities/Car.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
+        <state relative-caret-position="323">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Inventory.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SalesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4788">
-          <caret line="431" column="67" lean-forward="true" selection-start-line="431" selection-start-column="67" selection-end-line="431" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#24142#24143#0" expanded="true" />
-            <element signature="e#24193#24194#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/AssistFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-232">
-          <caret line="13" column="68" lean-forward="true" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
-          <caret line="313" column="75" lean-forward="true" selection-start-line="313" selection-start-column="75" selection-end-line="313" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Information.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/LogType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="34">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Library.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
+        <state relative-caret-position="68">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -907,31 +631,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Information.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2551">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+        <state relative-caret-position="85">
+          <caret line="7" column="4" selection-start-line="3" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/AssistFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/InventoryController.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/javafx-src.zip!/com/sun/glass/ui/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2634">
-          <caret line="413" column="34" selection-start-line="413" selection-start-column="34" selection-end-line="413" selection-end-column="34" />
+        <state relative-caret-position="225">
+          <caret line="936" selection-start-line="936" selection-end-line="936" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventory.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sell.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Screens.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Sales.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="24" column="116" selection-start-line="24" selection-start-column="116" selection-end-line="24" selection-end-column="116" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1583#1584#0" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
-            <element signature="e#1856#1857#0" expanded="true" />
-            <element signature="e#1906#1907#0" expanded="true" />
-            <element signature="e#3006#3007#0" expanded="true" />
-            <element signature="e#3081#3082#0" expanded="true" />
-            <element signature="e#7105#7106#0" expanded="true" />
-            <element signature="e#7146#7147#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SellController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <folding>
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1075#1076#0" expanded="true" />
+            <element signature="e#2143#2144#0" expanded="true" />
+            <element signature="e#2218#2219#0" expanded="true" />
+            <element signature="e#1879#1880#0" expanded="true" />
+            <element signature="e#1912#1913#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/Core/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="279" column="6" lean-forward="true" selection-start-line="279" selection-start-column="6" selection-end-line="279" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/InventoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5321">
+          <caret line="409" column="59" lean-forward="true" selection-start-line="409" selection-start-column="59" selection-end-line="409" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+            <element signature="e#1933#1934#0" expanded="true" />
+            <element signature="e#1983#1984#0" expanded="true" />
+            <element signature="e#3166#3167#0" expanded="true" />
+            <element signature="e#3241#3242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/SalesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="382" column="49" lean-forward="true" selection-start-line="382" selection-start-column="49" selection-end-line="382" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#16254#16255#0" expanded="true" />
+            <element signature="e#16329#16330#0" expanded="true" />
+            <element signature="e#23097#23098#0" expanded="true" />
+            <element signature="e#23148#23149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/AddInventoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="123" column="49" selection-start-line="94" selection-start-column="12" selection-end-line="123" selection-end-column="53" />
+          <folding>
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#2874#2875#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beep/Beep/Dealership/Application/UI/Inventory.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
         </state>
       </provider>
     </entry>

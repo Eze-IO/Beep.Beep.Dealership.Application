@@ -113,7 +113,7 @@
       <AnchorPane prefHeight="72.0" prefWidth="450.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="submitButton" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="33.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="400.0" stylesheets="@Design/Button.css" text="SUBMIT" textAlignment="CENTER" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
-            <Label fx:id="statusLabel" alignment="CENTER" layoutX="27.0" layoutY="6.0" prefHeight="20.0" prefWidth="400.0" stylesheets="@Design/Label.css" text="---" textAlignment="CENTER" />
+            <Label fx:id="statusLabel" alignment="CENTER" layoutX="27.0" layoutY="6.0" prefHeight="20.0" prefWidth="400.0" stylesheets="@Design/Label.css" text="---" textAlignment="CENTER" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="23.0" />
          </children>
          <BorderPane.margin>
             <Insets top="10.0" />

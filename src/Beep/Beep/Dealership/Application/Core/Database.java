@@ -238,7 +238,7 @@ public class Database {
 
             /*
                 Send car object to server as request in the JSON format
-                the response will retrun true, if it worked!
+                the response will return true, if it worked!
              */
             JsonObject requestID = new JsonObject();
             requestID.addProperty("Name", machine.name);
@@ -281,8 +281,8 @@ public class Database {
             //Check if 'car' actually exists
             Car c = getAnItem(car.getID());
             if(car.equals(c)){ //if the car exists we save the new 'car' object and remove the old one
-                if(saveAnItem(car.toVehicle()))
-                    return removeAnItem(car.getID());
+                removeAnItem(car.getID());
+                return saveAnItem(car.toVehicle());
             }
             return false;
         }
@@ -322,11 +322,10 @@ public class Database {
             if(conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 //A response code of 500 or any other means it failed to remove the item from api link
                 Library.writeLog("Failed to remove item!", LogType.WARN);
-            } else {
-                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                return Boolean.parseBoolean(br.readLine().trim());
             }
-            return false;
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            return Boolean.parseBoolean(br.readLine().trim());
         }
         catch (Exception ex) {
             Library.writeLog(ex);

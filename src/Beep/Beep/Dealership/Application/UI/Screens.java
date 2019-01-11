@@ -1,6 +1,7 @@
 package Beep.Beep.Dealership.Application.UI;
 
 import Beep.Beep.Dealership.Application.Core.Information;
+import Beep.Beep.Dealership.Application.Core.Library;
 import javafx.application.Application;
 import java.util.*;
 
@@ -71,7 +72,14 @@ public class Screens {
 
     public void centerWindow() {
         try{
-            this.main.getWindow().centerOnScreen();
+            main.getWindow().centerOnScreen();
+        }
+        catch (Exception ex) { return; }
+    }
+
+    public void closeWindow() {
+        try{
+            ((Stage)(main.getWindow())).close();
         }
         catch (Exception ex) { return; }
     }
