@@ -9,13 +9,13 @@
 
 Login Screen
 ======
-![alt text](front_window.png "first UI of application")
+![alt text](images/front_window.png "first UI of application")
 
 
 Search For a Car
 ======
-![alt text](search_results.png "split screen with search results")
+![alt text](images/search_results.png "split screen with search results")
 
 Get Price of Each Car
 ======
-![alt text](price_window.png "price of a car in search results")
+![alt text](images/price_window.png "price of a car in search results")
