@@ -1,4 +1,4 @@
-# Beep.Beep.Dealership.Application
+# Beep Beep Dealership! Application
 **A car dealership JavaFX application for CIS 2348**
 
 ### Uses:
