@@ -6,6 +6,6 @@ public class Information {
         return ("Beep! Beep! Dealership Inventory");
     } //title of application
     public static String getCompanyInfo() {
-        return ("Created by Eze Ahuna & Ashir Barlas.");
-    } //Names of us :)
+        return ("Created by Eze Ahuna & Muhammed Yusuf Yilmaz.");
+    } //Names of contributors
 }
