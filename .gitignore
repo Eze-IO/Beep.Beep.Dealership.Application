@@ -1,7 +1,11 @@
 /out/
 /target/
 /.mvn/
-/.idea/
+.idea/
 
 # Personal API links - keep these out of git
 config.properties
+
+# OS and IDE files
+.DS_Store
+*.iml
