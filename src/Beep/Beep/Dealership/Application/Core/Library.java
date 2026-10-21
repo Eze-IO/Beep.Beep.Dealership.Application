@@ -21,8 +21,13 @@ public class Library {
         }
     }
 
+    //Folder in the user's home directory that holds the log file and personal config
+    public static Path getAppDirectory(){
+        return Paths.get(System.getProperty("user.home"), getDirectoryName());
+    }
+
     //Path to log file
-    private static Path _logFile = Paths.get(System.getProperty("user.home").toString(), getDirectoryName(), "events.log");
+    private static Path _logFile = getAppDirectory().resolve("events.log");
     public static String getLogFile() {
         createLogFile();
         return _logFile.toString();

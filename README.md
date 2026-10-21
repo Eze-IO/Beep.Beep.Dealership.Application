@@ -61,6 +61,14 @@ JavaFX itself does not need to be installed. Maven downloads it automatically.
 ```bash
 git clone https://github.com/Eze-IO/Beep.Beep.Dealership.Application.git
 cd Beep.Beep.Dealership.Application
+```
+
+Add your API links (see [Configuration](#configuration)), then start the app:
+
+```bash
+mkdir -p ~/.Beep.Beep.Dealership.Application
+cp config.example.properties ~/.Beep.Beep.Dealership.Application/config.properties
+# edit that file and paste in your four API links
 mvn javafx:run
 ```
 
@@ -76,21 +84,37 @@ Compiled classes, FXML, and assets end up in `target/classes`.
 
 ## Configuration
 
-App settings live in [`resources/configurations.properties`](resources/configurations.properties):
+### API links
 
-| Key | Purpose |
-| --- | --- |
-| `title` | Window title |
-| `creators` | Credits shown in the app |
-| `getListUrl` | Endpoint that lists all cars |
-| `getItemUrl` | Endpoint that fetches one car by ID |
-| `putItemUrl` | Endpoint that creates or updates a car |
-| `deleteItemUrl` | Endpoint that deletes a car by ID |
+The app talks to four AWS API Gateway endpoints. Their links are **not stored in this repo**. The app looks for each one in this order:
 
-To point the app at your own backend, deploy Lambda functions behind API Gateway for these four operations and replace the URLs.
+1. **Environment variable**
+2. **Personal config file**
+   - macOS / Linux: `~/.Beep.Beep.Dealership.Application/config.properties`
+   - Windows: `%USERPROFILE%\Beep.Beep.Dealership.Application\config.properties`
+3. **Bundled** [`resources/configurations.properties`](resources/configurations.properties) (empty by default)
+
+| Config key | Environment variable | Purpose |
+| --- | --- | --- |
+| `getListUrl` | `BEEP_GET_LIST_URL` | Lists all cars |
+| `getItemUrl` | `BEEP_GET_ITEM_URL` | Fetches one car by ID |
+| `putItemUrl` | `BEEP_PUT_ITEM_URL` | Creates or updates a car |
+| `deleteItemUrl` | `BEEP_DELETE_ITEM_URL` | Deletes a car by ID |
+
+Start from [`config.example.properties`](config.example.properties). Any file named `config.properties` is git-ignored so your links don't get committed. Environment variables are handy for a one-off run:
+
+```bash
+BEEP_GET_LIST_URL=https://... BEEP_GET_ITEM_URL=https://... \
+BEEP_PUT_ITEM_URL=https://... BEEP_DELETE_ITEM_URL=https://... \
+mvn javafx:run
+```
 
 > [!NOTE]
-> Inventory and sales data come from those AWS endpoints, so they must be reachable for the lists to load or for changes to save. If something goes wrong, check the event log.
+> Inventory and sales data come from those endpoints, so they must be reachable for lists to load or changes to save. If a link is missing, the app writes a critical error naming it to the event log.
+
+### App info
+
+[`resources/configurations.properties`](resources/configurations.properties) also holds the window `title` and the `creators` credit line.
 
 ## Event log
 

@@ -2,3 +2,6 @@
 /target/
 /.mvn/
 /.idea/
+
+# Personal API links - keep these out of git
+config.properties
